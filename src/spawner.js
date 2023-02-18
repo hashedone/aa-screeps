@@ -23,10 +23,8 @@ function spawners() {
     return {
         spawners: _.mapValues(
             Game.rooms,
-            room => {
-                spawner(room),
-            }
-        );
+            spawner
+        )
     }
 }
 
