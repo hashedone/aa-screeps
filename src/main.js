@@ -6,7 +6,6 @@ function spawn_creeps() {
         const max_cost = spawn.room.energyCapacityAvailable;
 
         const miner_body = miner.body(max_cost);
-        const miner_cost = cost(miner_body);
 
         const mem_next_id = spawn.memory.next_id;
         const next_id = (mem_next_id ? mem_next_id : 0)
