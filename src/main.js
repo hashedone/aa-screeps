@@ -1,6 +1,9 @@
+const spawner = require('spawner');
 const miner = require('miner');
 
 function spawn_creeps() {
+    const spawners = spawner.spawners();
+
     for(const idx in Game.spawns) {
         const spawn = Game.spawns[idx];
         const max_cost = spawn.room.energyCapacityAvailable;
