@@ -6,7 +6,7 @@
 function spawner(room) {
     if(room.memory.spawner == undefined) {
         room.memory.spawner = {
-            spawns: room.find(FIN_MY_STRUCTURES, {
+            spawns: room.find(FIND_MY_STRUCTURES, {
                 structureType: STRUCTURE_SPAWN
             }),
             queue: [],
