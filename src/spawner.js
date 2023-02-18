@@ -6,9 +6,14 @@
 function spawner(room) {
     if(room.memory.spawner == undefined) {
         room.memory.spawner = {
-            spawns: room.find(FIND_MY_STRUCTURES, {
-                structureType: STRUCTURE_SPAWN
-            }),
+            spawns: _.mapValues(
+                room.find(FIND_MY_STRUCTURES, {
+                    filter: {
+                        structureType: STRUCTURE_SPAWN
+                    }
+                }),
+                spawn => spawn.id,
+            ),
             queue: [],
         };
     }
