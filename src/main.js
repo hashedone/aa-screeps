@@ -1,5 +1,4 @@
 const miner = require('miner');
-const _ = require('lodash');
 
 function spawn_creeps() {
     for(const idx in Game.spawns) {
@@ -9,7 +8,8 @@ function spawn_creeps() {
         const miner_body = miner.body(max_cost);
         const miner_cost = cost(miner_body);
 
-        const next_id = (spawn.memory.next_id ?? 0)
+        const mem_next_id = spawn.memory.next_id;
+        const next_id = (mem_next_id ? mem_next_id : 0)
         const id = spawn.name + '_' + next_id;
 
         if(spawn.spawnCreep(miner_body, miner.name(id)) == OK) {

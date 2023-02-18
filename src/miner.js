@@ -19,3 +19,8 @@ function name(id) {
     return "Miner_" + id;
 }
 
+module.exports = {
+    body: body,
+    name: name
+}
+
